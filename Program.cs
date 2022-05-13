@@ -2,7 +2,8 @@
 using CSharpHub;
 
 Random random = new Random();
-List<int> elementsQty = new List<int>() { 50, 250, 1000, 10000, 25000, 100000 };
+List<int> elementsQty = new List<int>() { 1000, 2000, 4000, 8000, 16000, 32000, 64000, 128000 };
+
 
 foreach (var elementsValue in elementsQty)
 {

@@ -1,4 +1,4 @@
-# Sorted Algotihms times:
+# Sorted Algorithms times:
 
 Horizontal line is number of array element to sorted.
 Vertical line is time in miliseconds to complete sorting.

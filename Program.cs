@@ -12,7 +12,7 @@ foreach (var elementsValue in elementsQty)
     //just fill many numbers
     for (int i = elementsValue; i > 0; i--)
     {
-        listOfNumbers.Add(random.Next(1, elementsValue / 10));
+        listOfNumbers.Add(random.Next(1, elementsValue));
     }
 
     int[] numbers = listOfNumbers.ToArray();
@@ -23,7 +23,6 @@ foreach (var elementsValue in elementsQty)
     var quickSorted = quickSort.Sort(numbers);
     quickWatch.Stop();
     Console.WriteLine($"QuickSort takes: {quickWatch.ElapsedMilliseconds} ms");
-
 
     Stopwatch selectionWatch = Stopwatch.StartNew();
     SelectionSort selectionSort = new SelectionSort();
@@ -58,6 +57,20 @@ foreach (var elementsValue in elementsQty)
         throw new Exception();
 
     Console.WriteLine();
+
+    Console.WriteLine("Check is sorted correct:");
+    quickSorted.ConsolePrintFirst(5);
+    quickSorted.ConsolePrintLast(5);
+    selectionSorted.ConsolePrintFirst(5);
+    selectionSorted.ConsolePrintLast(5);
+    bubbleSorted.ConsolePrintFirst(5);
+    bubbleSorted.ConsolePrintLast(5);
+    insertionSorted.ConsolePrintFirst(5);
+    insertionSorted.ConsolePrintLast(5);
+
+    Console.WriteLine();
+
+
 
 }
 

@@ -57,10 +57,6 @@ foreach (var elementsValue in elementsQty)
     if (insertionSorted.Length != numbers.Length)
         throw new Exception();
 
-    //Console.WriteLine(string.Join(", ", selectionSorted));
-    //Console.WriteLine(string.Join(", ", quickSorted));
-    //Console.WriteLine(string.Join(", ", bubbleSorted));
-    //Console.WriteLine(string.Join(", ", insertionSorted));
     Console.WriteLine();
 
 }

@@ -52,22 +52,6 @@ namespace CSharpHub
                 }
             }
 
-
-            //while (toSort.Count > 0)
-            //{
-            //    int sortingValue = toSort[0];
-
-            //    for (int i = 0; i < sorted.Count; i++)
-            //    {
-            //        if (sortingValue >= sorted[i])
-            //        {
-            //            sorted.Insert(i, sortingValue);
-            //            toSort.Remove(sortingValue);
-            //            break;
-            //        }
-            //    }
-            //}
-
             return sorted.ToArray();
         }
     }

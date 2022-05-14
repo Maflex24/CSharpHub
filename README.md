@@ -1,13 +1,15 @@
-﻿# Graph algorithms
+# Graph algorithms
 
 ## Surface Check
-It's algorithm to find maximum rectangle surface possibly creating from pillars created based on array values. 
+It's algorithm to find maximum rectangle surface, possibly created by pillars, created based on array values. 
   
 Here should by 18:  
-![graph](adres "Graph of algorithms times")  
   
-Here 10: 
-![graph](adres "Graph of algorithms times") 
+![graph](https://github.com/Maflex24/CSharpHub/blob/GraphsAlgorithms/18.jpg?raw=true "Graph of algorithms times")  
+  
+Here should be 10:   
+  
+![graph](https://github.com/Maflex24/CSharpHub/blob/GraphsAlgorithms/10.jpg?raw=true "Graph of algorithms times") 
 
 Probably I can use recursion, but right now is:  
 1. Outside loop from minimum value of array to maximum value  

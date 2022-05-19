@@ -16,8 +16,18 @@ namespace CSharpHub.Encapsulation
         public override void Withdraw(decimal withdraw)
         {
             base.Withdraw(withdraw);
+            saveMoney(withdraw);
+        }
 
-            decimal savingValue = withdraw * (_savingPercent * (decimal)0.01);
+        public override void Transfer(string toAccount, decimal money)
+        {
+            base.Transfer(toAccount, money);
+            saveMoney(money);
+        }
+
+        private void saveMoney(decimal transferValue)
+        {
+            decimal savingValue = transferValue * (_savingPercent * (decimal)0.01);
             if (savingValue <= _saldo)
             {
                 _saldo -= savingValue;

@@ -1,25 +1,25 @@
-﻿using CSharpHub.Encapsulation;
+﻿using CSharpHub;
+using CSharpHub.Encapsulation;
 using CSharpHub.OverrideAndHidden;
 
 BankAccount mainBankAccount = new BankAccount("gabriel", "1234", "Main Account");
 BankAccount savingAccount = new AutomaticSavingAccount("gabriel", "1234", "Automatic Saving Account");
+List<BankAccount> bankAccounts = new List<BankAccount>();
+bankAccounts.Add(mainBankAccount);
+bankAccounts.Add(savingAccount);
 
-mainBankAccount.LogIn("gabriel", "1234");
-mainBankAccount.Deposit(6000);
-mainBankAccount.GetSaldo();
-mainBankAccount.Transfer("161819", 2000);
-mainBankAccount.GetSaldo();
-mainBankAccount.Withdraw(2000);
-mainBankAccount.GetSaldo();
+foreach (var bankAccount in bankAccounts)
+{
+    bankAccount.LogIn("gabriel", "1234");
+    bankAccount.Deposit(6000);
+    bankAccount.GetSaldo();
+    bankAccount.Transfer("618146", 2000);
+    bankAccount.GetSaldo();
+    bankAccount.Withdraw(2000);
+    bankAccount.GetSaldo();
+    Console.WriteLine();
+}
 
-Console.WriteLine();
-savingAccount.LogIn("gabriel", "1234");
-savingAccount.Deposit(6000);
-savingAccount.GetSaldo();
-savingAccount.Transfer("161819", 2000);
-savingAccount.GetSaldo();
-savingAccount.Withdraw(2000);
-savingAccount.GetSaldo();
 
 Console.WriteLine();
 BaseClass baseInheritClass = new InheritClass();

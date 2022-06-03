@@ -9,29 +9,36 @@ namespace CSharpHub
 {
     public class SelectionSort
     {
-        public int[] Sort(int[] array)
+        public async Task<int[]> Sort(int[] array)
         {
+            Stopwatch sw = Stopwatch.StartNew();
+            Console.WriteLine("Started Selection sorting");
             List<int> sorted = new List<int>();
             List<int> toSort = array.ToList();
 
-            while (toSort.Count > 0)
+            await Task.Run(() =>
             {
-                int smallestValue = toSort[0];
-                int smallesValueIndex = 0;
-
-                for (int i = 0; i < toSort.Count; i++)
+                while (toSort.Count > 0)
                 {
-                    if (toSort[i] < smallestValue)
+                    int smallestValue = toSort[0];
+                    int smallesValueIndex = 0;
+
+                    for (int i = 0; i < toSort.Count; i++)
                     {
-                        smallestValue = toSort[i];
-                        smallesValueIndex = i;
+                        if (toSort[i] < smallestValue)
+                        {
+                            smallestValue = toSort[i];
+                            smallesValueIndex = i;
+                        }
                     }
+
+                    sorted.Add(toSort[smallesValueIndex]);
+                    toSort.Remove(toSort[smallesValueIndex]);
                 }
+            });
 
-                sorted.Add(toSort[smallesValueIndex]);
-                toSort.Remove(toSort[smallesValueIndex]);
-            }
-
+            sw.Stop();
+            Console.WriteLine($"End Selection sorting in {sw.ElapsedMilliseconds} ms.");
             return sorted.ToArray();
         }
     }

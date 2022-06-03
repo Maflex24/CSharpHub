@@ -2,7 +2,8 @@
 using CSharpHub;
 
 Random random = new Random();
-List<int> elementsQty = new List<int>() { 1000, 2000, 4000, 8000, 16000, 32000, 64000, 128000 };
+//List<int> elementsQty = new List<int>() { 1000, 2000, 4000, 8000, 16000, 32000, 64000, 128000, 256000, 512000, 1024000000 };
+List<int> elementsQty = new List<int>() { 1000, 2000, 4000, 8000, 16000, 32000, };
 
 
 foreach (var elementsValue in elementsQty)
@@ -20,29 +21,23 @@ foreach (var elementsValue in elementsQty)
 
     Stopwatch quickWatch = Stopwatch.StartNew();
     QuickSort quickSort = new QuickSort();
+    Console.WriteLine("Started Quick sorting");
     var quickSorted = quickSort.Sort(numbers);
-    quickWatch.Stop();
-    Console.WriteLine($"QuickSort takes: {quickWatch.ElapsedMilliseconds} ms");
+    Console.WriteLine($"End Quick sorting in {quickWatch.ElapsedMilliseconds} ms.");
 
-    Stopwatch selectionWatch = Stopwatch.StartNew();
+
     SelectionSort selectionSort = new SelectionSort();
-    var selectionSorted = selectionSort.Sort(numbers);
-    selectionWatch.Stop();
-    Console.WriteLine($"SelectionSort takes: {selectionWatch.ElapsedMilliseconds} ms");
-
-
-    Stopwatch bubbleWatch = Stopwatch.StartNew();
     BubbleSort bubbleSort = new BubbleSort();
-    var bubbleSorted = bubbleSort.Sort(numbers);
-    bubbleWatch.Stop();
-    Console.WriteLine($"BubbleSort takes: {bubbleWatch.ElapsedMilliseconds} ms");
-
-
-    Stopwatch insertionWatch = Stopwatch.StartNew();
     InsertionSort insertionSort = new InsertionSort();
-    var insertionSorted = insertionSort.Sort(numbers);
-    insertionWatch.Stop();
-    Console.WriteLine($"InsertionSort takes: {insertionWatch.ElapsedMilliseconds} ms");
+    var selection = selectionSort.Sort(numbers);
+    var bubble = bubbleSort.Sort(numbers);
+    var insertion = insertionSort.Sort(numbers);
+
+
+    var selectionSorted = await selection;
+    var bubbleSorted = await bubble;
+    var insertionSorted = await insertion;
+
 
     if (selectionSorted.Length != numbers.Length)
         throw new Exception();
